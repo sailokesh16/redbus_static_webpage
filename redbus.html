@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./redbus.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <img src="./img/rdc-redbus-logo.svg" alt="logo" class="logo" />
+      <nav>
+        <ul class="main-nav">
+          <div class="content-to-left">
+            <li><a href="#" class="main-nav-link">Airport Transfers</a></li>
+          </div>
+          <div class="content-to-right">
+            <li><a href="#" class="main-nav-secondpart-link">Help</a></li>
+            <li>
+              <a href="#" class="main-nav-secondpart-link">Manage Booking</a>
+            </li>
+            <li><a href="#" class="main-nav-secondpart-link">Login</a></li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="backgroung-img-section">
+      <div class="img">
+        <img src="./img/hero-top-image.svg" alt="" class="redbus-img" />
+        <p class="hero-top-image-text">
+          Book your journey now with the world's largest bus platform
+        </p>
+      </div>
+
+      <div class="search_bar">
+        <div class="source">
+          <label for="source-lable" class="source-lable">SOURCE</label>
+          <div>
+            <ion-icon
+              name="location-outline"
+              class="source-icon location-icon"
+            ></ion-icon>
+            <input
+              type="text"
+              class="sourcr-input input"
+              id="source-lable"
+              placeholder="Ex:Bangalore"
+            />
+          </div>
+        </div>
+        <!-- -------------------------------------------------------------------------- -->
+        <div>
+          <ion-icon name="repeat-outline" class="icon"></ion-icon>
+          <!-- <ion-icon name="swap-vertical-outline" class="icon"></ion-icon> -->
+        </div>
+        <!-- ------------------------------------------------------------------- -->
+
+        <div class="source destination">
+          <label for="source-lable" class="source-lable destination-lable"
+            >Destination</label
+          >
+          <div>
+            <ion-icon
+              name="location-outline"
+              class="source-icon location-icon"
+            ></ion-icon>
+            <input
+              type="text"
+              class="sourcr-input input"
+              id="source-lable"
+              placeholder="Ex:Bangalore"
+            />
+          </div>
+        </div>
+        <!-- ------------------------------------------------------------------------- -->
+        <ion-icon name="remove-outline" class="line-icon icon"></ion-icon>
+        <!-- -------------------------------------------------------------------------- -->
+
+        <dliv class="date-box">
+          <label for="dateTextInput" class="date-labletext">DATE</label>
+          <div>
+            <!-- <ion-icon name="calendar-outline" class="calendar-icon icon"></ion-icon> -->
+            <input
+              type="text"
+              id="dateTextInput"
+              placeholder="DD/MM"
+              class="date-input"
+            />
+          </div>
+
+          <script>
+            const dateTextInput = document.getElementById("dateTextInput");
+
+            // Create a hidden date input
+            const dateInput = document.createElement("input");
+            dateInput.type = "date";
+            dateInput.style.display = "none"; // hide it initially
+            document.body.appendChild(dateInput);
+
+            // Trigger the date input when clicking on the text input
+            dateTextInput.addEventListener("click", () => {
+              dateInput.click(); // opens the calendar picker
+            });
+
+            // Transfer the selected date to the text input in DD/MM format
+            dateInput.addEventListener("change", () => {
+              const selectedDate = new Date(dateInput.value);
+              const day = String(selectedDate.getDate()).padStart(2, "0");
+              const month = String(selectedDate.getMonth() + 1).padStart(
+                2,
+                "0"
+              );
+              dateTextInput.value = `${day}/${month}`;
+            });
+          </script>
+        </dliv>
+
+        <!-- ------------------------------------------------------------------------- -->
+        <ion-icon name="remove-outline" class="line-icon icon"></ion-icon>
+        <!-- -------------------------------------------------------------------------- -->
+
+        <div class="return-box">
+          <label for="return-label" class="return-label">RETURN DATE</label>
+          <div>
+            <input
+      
+              type="text"
+              class="return-input input"
+              id="return-label"
+              placeholder="Ex:Optional"
+              
+            />
+          </div>
+        </div>
+        <!-- ------------------------------------------------------------------------ -->
+
+        <button class="search-button">
+          <div class="search-text">search</div>
+        </button>
+      </div>
+    </section>
+<!-- ------------------------------------------------------------------------------------ -->
+
+<section class="about-section">
+
+  <div class="customer-box">
+    <img src="./img/36million(hero-second-face).svg" alt="" class="customer-img img">
+    <div class="million">36 Million</div>
+    <div class="happy-customers">happy customers globally</div>
+  </div>
+  <!-- ------------------------------- -->
+  <div class="bus-companey-box">
+    <img src="./img/3500worldwide(hero-second-phace1).svg" alt="" class="bus-img about-img">
+    <div class="bus-companey-num">Over 5000</div>
+    <div class="second-heading">bus companies worldwide</div>
+  </div>
+  <!-- ------------------------------- -->
+  <div class="tickets-box">
+    <img src="./img/100000-booked-perday(hero-second-phace2).svg" alt="" class="ticket-img img">
+    <div class="ticket-count">200,000+</div>
+    <div class="second-heading">tickets booked everyday</div>
+  </div>
+
+</section>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
